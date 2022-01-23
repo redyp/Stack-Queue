@@ -84,3 +84,15 @@ class Queue:
         self.lenght += 1
         return True
     
+    def dequeue(self) -> Node:
+        if self.lenght == 0:
+            return None
+        temp = self.head
+        if self.lenght == 1:
+            self.head = None
+            self.tail = None
+        else:
+            self.head = temp._next
+            temp._next = None
+        self.lenght -= 1
+        return temp
