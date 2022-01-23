@@ -72,3 +72,15 @@ class Queue:
             temp = temp._next
         temp_str += 'None'
         return temp_str
+    
+    def enqueue(self, value: int):
+        enqueue_node = Node(value)
+        if self.head == None:
+            self.head = enqueue_node
+            self.tail = enqueue_node
+        else:
+            self.tail._next = enqueue_node
+            self.tail = enqueue_node
+        self.lenght += 1
+        return True
+    
